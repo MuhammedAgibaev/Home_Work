@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
+    public boolean status = true;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,20 +16,20 @@ public class MainActivity extends AppCompatActivity {
 
         final TextView firstText = findViewById(R.id.main_frst_txt);
         Button buttonOk = findViewById(R.id.main_btnOk);
-        Button buttonCancel = findViewById(R.id.main_btnCancel);
 
         buttonOk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                firstText.setText("Нажата кнопка Ok");
+                if (status){
+                    firstText.setText("Нажата кнопка ОК");
+                    status = false;
+                }else
+                {
+                    firstText.setText("Жми на кнопку");
+                    status = true;
+                }
             }
         });
 
-        buttonCancel.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                firstText.setText("Жми на кнопку");
-            }
-        });
     }
 }

@@ -34,12 +34,5 @@
         android:text="OK"
         android:textSize="25dp" />
 
-        <Button
-        android:id="@+id/main_btnCancel"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Отмена"
-        android:textSize="25dp" />
-
     </LinearLayout>
 </LinearLayout>
